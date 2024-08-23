@@ -67,17 +67,17 @@ for (i=0; i < button_pay_merch.length; i+=1 ) {
 // Код, который меняет тему
 function change_theme() {
    let header = document.querySelector('header')
-   if (current_background == 'url(/uploads/2022/11/bg_space.png)') {
-       current_background = 'url(/uploads/2022/11/bg_mars.png)'
+   if (current_background == 'url(https://algoritmika.org/uploads/2022/11/bg_space.png)') {
+       current_background = 'url(https://algoritmika.org/uploads/2022/11/bg_mars.png)'
    } else {
-       current_background = 'url(/uploads/2022/11/bg_space.png)'
+       current_background = 'url(https://algoritmika.org/uploads/2022/11/bg_space.png)'
    }
    header.style.background = current_background
    header.style.backgroundSize = 'cover'
 }
  
 let change_theme_button = document.querySelector('.switch-theme-button')
-let current_background = 'url(/uploads/2022/11/bg_mars.png)'
+let current_background = 'https://algoritmika.orgurl(/uploads/2022/11/bg_mars.png)'
 change_theme_button.addEventListener('click', change_theme)
  
 
