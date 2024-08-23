@@ -31,13 +31,26 @@ for (let i = 0; i < item_description_objects.length; i += 1) {
    item_price_objects[i].innerHTML = item_prices[i]
 }
 //подсчёт корзины
+let total_price = 0
 let merch_items = document.querySelector('.cart-amount')
 let button_pay_merch = document.querySelectorAll('.add-to-cart-btn')
+let cart_button = document.querySelectorAll('.nav-item')[4]
+let cart_button_text = cart_button.querySelector('.cart-text')
 for (i=0; i < button_pay_merch.length; i+=1 ) {
     button_pay_merch[i].addEventListener('click', function() {
         merch_items.innerHTML = +merch_items.innerHTML + 1
+        if (cart_button_text.innerHTML != 'Корзина') {
+            cart_button_text.innerHTML = total_price
+        }
     })
 }
+cart_button.addEventListener('click', function() {
+  if (cart_button_text.innerHTML == 'Корзина') {
+      cart_button_text.innerHTML = total_price
+  } else {
+      cart_button_text.innerHTML = 'Корзина'
+  }
+})
 
 
 
