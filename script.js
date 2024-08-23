@@ -90,7 +90,7 @@ function change_theme() {
 }
  
 let change_theme_button = document.querySelector('.switch-theme-button')
-let current_background = 'https://algoritmika.orgurl(/uploads/2022/11/bg_mars.png)'
+let current_background = 'url(https://algoritmika.org/uploads/2022/11/bg_mars.png)'
 change_theme_button.addEventListener('click', change_theme)
  
 
