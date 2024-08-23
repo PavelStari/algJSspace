@@ -32,17 +32,18 @@ for (let i = 0; i < item_description_objects.length; i += 1) {
 }
 //подсчёт корзины
 let total_price = 0
-let merch_items = document.querySelector('.cart-amount')
-let button_pay_merch = document.querySelectorAll('.add-to-cart-btn')
+let cart_items_count = document.querySelector('.cart-amount')
+let add_to_cart_buttons = document.querySelectorAll('.add-to-cart-btn')
 let cart_button = document.querySelectorAll('.nav-item')[4]
 let cart_button_text = cart_button.querySelector('.cart-text')
-for (i=0; i < button_pay_merch.length; i+=1 ) {
-    button_pay_merch[i].addEventListener('click', function() {
-        merch_items.innerHTML = +merch_items.innerHTML + 1
-        if (cart_button_text.innerHTML != 'Корзина') {
-            cart_button_text.innerHTML = total_price
-        }
-    })
+for (let i = 0; i < add_to_cart_buttons.length; i += 1) {
+  add_to_cart_buttons[i].addEventListener('click', function() {
+      cart_items_count.innerHTML = +cart_items_count.innerHTML + 1
+      total_price += item_prices[i]
+      if (cart_button_text.innerHTML != 'Корзина') {
+          cart_button_text.innerHTML = total_price
+      }
+  })
 }
 cart_button.addEventListener('click', function() {
   if (cart_button_text.innerHTML == 'Корзина') {
@@ -51,6 +52,7 @@ cart_button.addEventListener('click', function() {
       cart_button_text.innerHTML = 'Корзина'
   }
 })
+
 
 
 
